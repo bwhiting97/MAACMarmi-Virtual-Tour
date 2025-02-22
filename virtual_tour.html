@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { 
+            text-align: center; 
+            font-family: Futura, sans-serif; 
+            background-color: #f4f4f4; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .logo-container { 
+            margin-bottom: 10px;
+            margin-top: -40px;
+        }
+
+        .logo-container img { 
+            max-width: 100px;
+        }
+
+        .menu-container {
+            width: 80vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1px;
+        }
+
+        select { 
+            margin: 10px; 
+            padding: 8px; 
+            font-size: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+            position:relative;
+            left: 460px;
+        }
+
+        iframe { 
+            width: 80vw; 
+            height: 70vh; 
+            border:#f4f4f4;
+            background-color: #000;
+            right: 100px;
+        }
+
+        label {
+            font-size: 13px;
+            position:relative;
+            top: 35px;
+            left: 285px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <img src="Logo-owmrimez65b858rx7slguo9o2diu8dq1kfr66tlgqw-2.png" alt="Maac Marmi Logo">
+    </div>
+
+    <div class="menu-container">
+        <label for="modelSelect"><b>Select a Model</b></label>
+        <select id="modelSelect" onchange="changeModel()">
+            <option value="https://sketchfab.com/models/e565edac16c146f28ccdf3b64ccda152/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">NASA</option>
+            <option value="https://sketchfab.com/models/e1e8a30d965f4b308776d7a256f63dd1/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">NASA</option>
+            <option value="https://sketchfab.com/models/afa5412ad0dd4722893f340bcaed7901/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">NASA 2</option>
+            <option value="https://sketchfab.com/models/8e18193b1f8d46c1b21a03a7a7907cb1/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Luna</option>
+            <option value="https://sketchfab.com/models/e8c065b322cd433a9883467593588e0c/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Apollo 11</option>
+            <option value="https://sketchfab.com/models/11e39baa2a1c4af8b1a451e3cf2620a1/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Tavolo 3</option>
+            <option value="https://sketchfab.com/models/fa4b0d1c63a4421198abe858a3514963/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Pietro 02</option>
+            <option value="https://sketchfab.com/models/e33fc2efc9fd47f8b0396d66acf51d22/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Pietro 03</option>
+            <option value="https://sketchfab.com/models/f466fe08233e4415bb928ea9b3d5b7c2/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Pietro 04</option>
+            <option value="https://sketchfab.com/models/eff11629a52d4d029f9e14286368d383/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Pietro 01</option>
+            <option value="https://sketchfab.com/models/964efb0c013c446695dd21dbead7bd33/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">XForm</option>
+            <option value="https://sketchfab.com/models/a44ac4cc4b2b4553b086d542bf45c011/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Livo</option>
+            <option value="https://sketchfab.com/models/80169d8b6cb44d0aa5cc11fc5e84bc3d/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Sondrio</option>
+            <option value="https://sketchfab.com/models/d2341a3b31994501954527a1b61fff45/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Trieste Marble Table</option>
+            <option value="https://sketchfab.com/models/b7aa95dc5f36447f86a573da1937acb2/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Tavolo Alpha</option>
+            <option value="https://sketchfab.com/models/daba6762dc0b49bd9b35022468f2cedd/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Cremona</option>
+            <option value="https://sketchfab.com/models/9e0ec825c04743a79ca79752d86617ae/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Varinate Sostegno</option>
+            <option value="https://sketchfab.com/models/8e0a5578177b4404b9cedb2a4df14092/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Verona Nero</option>
+            <option value="https://sketchfab.com/models/9182fa05cbcd4e52a9941a8de95f15f4/embed?autospin=1&autostart=1&camera=0&preload=1&dnt=1"">Verona 2</option>
+            <option value="https://sketchfab.com/models/a955d67280d043ce94f299cf76956b77/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Pisa</option>
+            <option value="https://sketchfab.com/models/5bbee603796241a186a0ec340daa1249/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Pordenone</option>
+            <option value="https://sketchfab.com/models/8cbddbbe568e44f3be5393fb481760db/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Pescara</option>
+            <option value="https://sketchfab.com/models/2212fd0387b84015a9eea8672c3a123a/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Table in Marble Messina</option>
+            <option value="https://sketchfab.com/models/61462b6d1f3441ed97bc37fad13d0217/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Palermo</option>
+            <option value="https://sketchfab.com/models/0efda1dd9ec34a77b775f53f4373c987/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Tavolo Roma 2</option>
+            <option value="https://sketchfab.com/models/9e0ec825c04743a79ca79752d86617ae/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Tavalo Torino</option>
+            <option value="https://sketchfab.com/models/a5dee65541a9409ab985301b0a24eeca/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Piacenza 2</option>
+            <option value="https://sketchfab.com/models/25ec98d31d4b42a288ce13284786a85b/embed?autospin=1&autostart=1&camera=0&preload=1&dnt=1"">Roma</option>
+            <option value="https://sketchfab.com/models/4b3ca9ac8d8e4ea58e90b272c6f10b01/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Marble Texture Design</option>
+            <option value="https://sketchfab.com/models/2d8697431e01407bbbb2ecf1711cb75d/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Tavolo Dubai</option>
+            <option value="https://sketchfab.com/models/338f5c5e3d624f368022080401e10227/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Tavolo Cigno</option>
+            <option value="https://sketchfab.com/models/63706116e5154daa9e6c4159a74ac100/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Test</option>
+            <option value="https://sketchfab.com/models/a681319b367447b6b3b6e4882c102954/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Test</option>
+            <option value="https://sketchfab.com/models/0a7fc3c0492d4be099ee79d1293eec1f/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Tavalo Xx</option>
+            <option value="https://sketchfab.com/models/2cd9c8473e824d4b87990553f818195f/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Tavolo Tondo</option>
+            <option value="https://sketchfab.com/models/d478247fbb954a8c9d987d91bab8418a/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Tavolo 06</option>
+            <option value="https://sketchfab.com/models/5efad1d61f144451b60a9616e2d00e3c/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Tavolo 6</option>
+            <option value="https://sketchfab.com/models/e2aed83e2a034cf8884bf5a9ed8866b5/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Tavalo Ca Caffè</option>
+            <option value="https://sketchfab.com/models/034269484b23464683cb8fde4de03b15/embed?autostart=1&camera=0&preload=1&dnt=1&autospin=1"">Modello Configuratore</option>
+            <option value="https://sketchfab.com/models/10f4296285134b4c9aa519304c96869d/embed?autospin=1&autostart=1&camera=0&preload=1&dnt=1"">Tavolo Maestrale Con Piano in Pietra Grigia</option>
+        </select>
+    </div>
+
+    <iframe id="sketchfabViewer" title="3D Model Viewer" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+    <script>
+        function changeModel() {
+            let viewer = document.getElementById("sketchfabViewer");
+            let selectedModel = document.getElementById("modelSelect").value;
+            viewer.src = selectedModel;
+        }
+        // Set the initial model
+        changeModel();
+    </script>
+
+</body>
+</html>
