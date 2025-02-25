@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+        body {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            overflow: hidden;
+            font-family: "Helvetica Neue", sans-serif;
+        }
+
+        .container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden; /* Initially hidden */
+        }
+
+        .animation {
+            position: absolute;
+            object-fit: cover;
+            transform: rotate(90deg);
+        }
+        /* Ensure the image fully fills the screen after rotation */
+        @media (orientation: portrait) {
+            .animation {
+                width: 100vh; /* Height of the viewport becomes width */
+                height: 100vw; /* Width of the viewport becomes height */
+            }
+
+        /* Animation to crop text from both sides */
+        @keyframes cropText {
+            0% { clip-path: inset(0% 0% 0% 0%); opacity: 1; }
+            100% { clip-path: inset(0% 50% 0% 50%); opacity: 0; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container" id="content">
+        <img src="Handmove.gif" class="animation" id="animation">
+    </div>
+    
+    <script>
+        // Delay the entire page content from showing
+        setTimeout(() => {
+            document.getElementById("content").style.visibility = "visible";
+        }, 2000); // 2-second delay before showing the content
+
+        // Delay the text appearance and animation
+        setTimeout(() => {
+            let text = document.getElementById("loadingText");
+            text.style.opacity = "1"; // Make text visible
+            text.style.animation = "cropText 2s ease-in-out forwards"; // Start animation
+        }, 2000); // 2-second delay before the text appears
+
+        // Redirect after animation
+        setTimeout(() => {
+            window.location.href = "mobile.html"; 
+        }, 5000); // 5-second total delay before redirecting
+    </script>
+
+</body>
+</html>
